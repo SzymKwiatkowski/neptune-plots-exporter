@@ -2,7 +2,6 @@
 import os
 from pathlib import Path
 import pandas as pd
-from itertools import groupby
 from matplotlib import pyplot as plt
 
 from parsing import ModelConfig
@@ -10,10 +9,13 @@ from export.plot_data import PlotData
 
 
 class ModelMetricExporter:
+    """Class for exporting model metrics to specified plots"""
     def __init__(self, model_configs: list[ModelConfig]):
+        """Init exporter"""
         self.model_configs = model_configs
 
     def export_models(self, data_path: Path, output_dir: Path):
+        """Export model metrics to specified plots"""
         plots_data = []
         if not os.path.exists(output_dir):
             os.mkdir(output_dir)
@@ -55,5 +57,6 @@ class ModelMetricExporter:
 
     @staticmethod
     def read_pandas_df(data_path_root: Path, run_id, metric_name: str) -> pd.DataFrame:
+        """Reads pandas frame based on base path with run_id and metric_name"""
         filename = run_id + "__" + metric_name + ".csv"
         return pd.read_csv(data_path_root / filename)

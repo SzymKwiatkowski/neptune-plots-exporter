@@ -64,7 +64,7 @@ class TestName(unittest.TestCase):
         config_path = root_dir / Path("templates/config.json.template")
         config = Config(load_json(config_path))
         self.assertIsNotNone(config)
-        self.assertCountEqual(config.get_model_configs(), 1)
+        self.assertEqual(len(config.get_model_configs()), 1)
 
 
 if __name__.__contains__("__main__"):
