@@ -1,0 +1,32 @@
+{
+  "models": [
+    {
+      "model_name": "EfficientNet B4",
+      "folder_name": "effb4",
+      "run_ids": [
+        "SIM-75",
+        "SIM-100",
+        "SIM-135",
+        "SIM-138"
+      ],
+      "mapping_dict": {
+        "SIM-75":  "1/2",
+        "SIM-100":  "1/9",
+        "SIM-135":  "1/3",
+        "SIM-138": "Full"
+      },
+      "metrics": [
+        "metrics_pooled_ce_loss",
+        "metrics_pooled_total_loss",
+        "metrics_pooled_center_loss",
+        "metrics_pooled_offset_loss",
+        "metrics_pooled_iou",
+        "metrics_pooled_val_ce_loss",
+        "metrics_pooled_val_center_loss",
+        "metrics_pooled_val_total_loss",
+        "metrics_pooled_val_offset_loss",
+        "metrics_pooled_val_iou"
+      ]
+    }
+  ]
+}
